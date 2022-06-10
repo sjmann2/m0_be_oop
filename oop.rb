@@ -70,25 +70,22 @@ class Dragon
   end
 
   def eat
-    @is_hungry = true
+    if eat >= 4
+      @is_hungry = false
+    elsif eat <= 3
+      @is_hungry = true
+    end
   end
-end
-      ##I'm struggling to correctly include the "if the dragon eats 4 times, @is_hungry = false"
-      # My thought process is to create a method that satifies the eat method. He eats once and is still hungry
-      #I then created another method to reference the eat method to say "if this method is called 4 times, is_hungry = false"
-      # But the code isn't working
 
+#I'm struggling to correctly include the "if the dragon eats 4 times, @is_hungry = false"
+#My thought process is an if statement that determines greater than or less than 4 to make is_hungry = false
+# But I'm unsure how to write code that acknowledges that the method has to be called 4 times for the if to be true
 
-def full
-  @is_hungry = false
-  if eat == 4
-  end
-end
 
 
 dragon1 = Dragon.new("snowball", "timmy", "red")
 p dragon1
-dragon1.eat
+dragon1.eat(food)
 p dragon1
 
 
